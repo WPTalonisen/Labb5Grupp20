@@ -7,12 +7,8 @@ def get_gbp_to_sek_rate():
 
     try:
         # Timeout på 10 sekunder precis som innan
-        response = requests.get(url, timeout=10)
-
-        # Om API:et svarar med ett fel (t.ex. 404 eller 500) fångas det här
+        response = requests.get(url)
         response.raise_for_status()
-
-        # Gör om svaret till JSON
         data = response.json()
 
         # Plockar ut just SEK-kursen från JSON-svaret
