@@ -2,7 +2,7 @@ from urllib.parse import urljoin
 import os
 import json
 import requests
-import re  # <--- NY: Behövs för att rensa priset snyggt
+import re
 from datetime import datetime
 from flask import Blueprint, jsonify
 from bs4 import BeautifulSoup
