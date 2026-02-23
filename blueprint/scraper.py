@@ -10,37 +10,40 @@ from currency_convert import get_gbp_to_sek_rate
 
 bookstoscrapeall_bp = Blueprint('bookstoscrapeall_bp', __name__)
 
-PROGRAM_CACHE_FILE = "bookstoscrapeall_cache.json"
 
-
+# Sätter namnet på JSON filen i funktionen istället för att hårdkoda den utanför
+# låter oss att göra en ny fil för varje dag
 @bookstoscrapeall_bp.route('/')
 def get_programs():
-    if os.path.exists(PROGRAM_CACHE_FILE):
+    today_date = datetime.today().strftime('%Y-%m-%d')
+    daily_cache_file = f"bookstoscrapeall_cache_{today_date}.json"
+
+    if os.path.exists(daily_cache_file):
         print("Fil hittad! Läser in från JSON...")
-        with open(PROGRAM_CACHE_FILE, 'r', encoding='utf-8') as f:
+        with open(daily_cache_file, 'r', encoding='utf-8') as f:
             full_data = json.load(f)
             full_data["source"] = "local_json_file"
             return jsonify(full_data)
     else:
         print(f"Ingen fil hittad. Skrapar live...")
-        program_list = scrape_bookstoscrapeall()
+        book_list = scrape_bookstoscrapeall()
 
         full_data = {
             "provider": "BooksToScrape",
             "source": "live_web_scrape",
             "scraped_at": str(datetime.now()),
-            "count": len(program_list),
-            "program": program_list
+            "count": len(book_list),
+            "book_list": book_list
         }
 
-        if program_list:
-            with open(PROGRAM_CACHE_FILE, 'w', encoding='utf-8') as f:
+        if book_list:
+            with open(daily_cache_file, 'w', encoding='utf-8') as f:
                 json.dump(full_data, f, ensure_ascii=False, indent=4)
 
         return jsonify(full_data)
 
 
-@bookstoscrapeall_bp.route("/")
+
 def scrape_bookstoscrapeall():
     base_url = "https://books.toscrape.com/"
     current_url = base_url
@@ -91,35 +94,30 @@ def scrape_bookstoscrapeall():
 
                 # Pris & Valutaomvandling
                 price_tag = book.find('p', class_='price_color')
-                price_str = "N/A"
                 price_sek = 0
 
                 if price_tag:
-                    raw_price = price_tag.get_text(strip=True)  # T.ex "£51.77"
+                    raw_price = price_tag.get_text(strip=True)  # T.ex £51.77
 
                     # Rensa strängen: Ta bort allt som INTE är siffror eller punkt
                     # Detta tar bort '£', 'Â' och andra tecken.
                     clean_price = re.sub(r'[^\d.]', '', raw_price)
 
                     try:
-                        # 2. Gör om till float
+                        # Gör om till float
                         price_float = float(clean_price)
 
-                        # 3. Räkna ut SEK
+                        # Räkna ut SEK
                         price_sek = round(price_float * gbp_rate, 2)
 
-                        # Spara originalsträngen (GBP)
-                        price_str = raw_price
                     except ValueError:
-                        price_str = raw_price
                         price_sek = "Error"
 
                 # Lägg till i stora listan
                 all_books.append({
                     "title": title,
                     "rating": star_rating + " Stars",
-                    "price_gbp": price_str,  # Originalpriset i GBP
-                    "price_sek": f"{price_sek} kr",  # Det nya priset i SEK
+                    "price": f"{price_sek} kr",  # Det nya priset i SEK
                     "link": full_link
                 })
 

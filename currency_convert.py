@@ -18,13 +18,13 @@ def get_gbp_to_sek_rate():
         rate_element = soup.find('div', class_='YMlKec fxKbKc')
 
         if rate_element:
-            # Hämta texten, och se till att det blir en float (byt komma mot punkt om det behövs)
+            # Hämta texten, och se till att det blir en float, byt komma mot punkt om det behövs
             rate_text = rate_element.get_text(strip=True).replace(',', '.')
             print(f"Hittade växelkurs: {rate_text}")
             return float(rate_text)
         else:
             print("Kunde inte hitta elementet för växelkursen.")
-            return 14.0  # Fallback om scraping misslyckas (ungefärlig kurs)
+            return 14.0  # Om scraping misslyckas (ungefärlig kurs)
 
     except Exception as e:
         print(f"Kunde inte hämta valuta: {e}")
