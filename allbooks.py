@@ -1,10 +1,12 @@
 from urllib.parse import urljoin
 import os
+import re
 import json
 import requests
 from datetime import datetime
 from flask import Blueprint, jsonify
 from bs4 import BeautifulSoup
+from currency_convert import get_gbp_to_sek_rate
 
 bookstoscrapeall_bp = Blueprint('bookstoscrapeall_bp', __name__)
 
@@ -62,6 +64,9 @@ def scrape_bookstoscrapeall():
     all_books = []  # En stor lista för ALLA sidors böcker
     page_count = 1  # Bara för att vi ska se i loggen vad som händer
 
+    gbp_rate = get_gbp_to_sek_rate()
+    print(f"Använder växelkurs: 1GBP = {gbp_rate} SEK")
+
     # --- STARTA LOOPEN ---
     # Så länge 'current_url' har ett värde, fortsätt köra
     while current_url:
@@ -69,6 +74,7 @@ def scrape_bookstoscrapeall():
 
         try:
             response = requests.get(current_url, headers=headers, timeout=10)
+            response.encoding = 'utf-8'
             soup = BeautifulSoup(response.text, 'html.parser')
 
             # 1. HÄMTA BÖCKERNA PÅ DENNA SIDA (Samma kod som förut)
@@ -98,13 +104,29 @@ def scrape_bookstoscrapeall():
 
                 # --- Pris ---
                 price_tag = book.find('p', class_='price_color')
-                price = price_tag.get_text(strip=True) if price_tag else "N/A"
+                price_str = "N/A"
+                price_sek = 0
+
+                if price_tag:
+                    raw_price = price_tag.get_text(strip=True)
+
+                    # Tar bort allt onödigt och ger bara siffror
+                    clean_price = re.sub(r'[^\d.]','',raw_price)
+
+                    try:
+                        price_float = float(clean_price)
+                        price_sek = round(price_float * gbp_rate, 2)
+                        price_str = raw_price
+                    except ValueError:
+                        price_str = raw_price
+                        price_sek = "Error"
 
                 # Lägg till i stora listan
                 all_books.append({
                     "title": title,
                     "rating": star_rating + " Stars",
-                    "price": price,
+                    "price_gbp": price_str,
+                    "price_sek": price_sek,
                     "link": full_link
                 })
 
