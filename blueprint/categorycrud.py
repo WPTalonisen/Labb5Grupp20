@@ -3,15 +3,14 @@ import os
 import json
 from datetime import datetime
 
-# Skapar en ny blueprint specifik för CRUD-operationer på kategorier
 category_crud_bp = Blueprint('category_crud_bp', __name__)
 
 
+# Tar den här istället för att skriva det flera gånger i kommande funktioner
 def get_specific_category_filename(category_name):
-    """Hjälpfunktion för att få fram rätt filnamn baserat på kategori och datum."""
-    safe_category = category_name.lower().replace(" ", "_")
+    category = category_name.lower().replace(" ", "_")
     today_date = datetime.now().strftime("%Y-%m-%d")
-    return f"{safe_category}_{today_date}.json"
+    return f"{category}_{today_date}.json"
 
 
 # LÄGG TILL en bok i en specifik kategori (POST)
