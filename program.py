@@ -15,7 +15,7 @@ url = "https://books.toscrape.com/"
 
 # --- ROUUTEN ---
 @bookstoscrape_bp.route('/')
-def get_programs():
+def get_books():
     # 1. Kolla om filen finns
     if os.path.exists(PROGRAM_CACHE_FILE):
         print("Fil hittad! Läser in från JSON...")
@@ -52,7 +52,8 @@ def scrape_bookstoscrape():
 
     base_url = "https://books.toscrape.com/"
 
-    # Webbsidor brukar blocka scripts automatiskt, User-Agent lurar hemsidan och får scriptet att se ut som en vanlig användare
+    # Webbsidor brukar blocka scripts automatiskt,
+    # User-Agent lurar hemsidan och får scriptet att se ut som en vanlig användare
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
@@ -97,11 +98,7 @@ def scrape_bookstoscrape():
                     #
                     #     .get_text(): Hämtar den synliga texten mellan <a> och </a>.
                     #
-                    #     strip=True: Detta är en städare. Den tar bort onödiga mellanslag och radbrytningar före och efter texten.
-                    #
-                    #         Utan strip: "   Harry Potter   \n"
-                    #
-                    #         Med strip: "Harry Potter"
+                    #     strip=True: Tar bort onödiga mellanslag och radbrytningar
                 elif link_tag.get_text(strip=True):
                     title = link_tag.get_text(strip=True)
 
