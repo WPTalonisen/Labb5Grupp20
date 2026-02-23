@@ -1,12 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-
+# Skrapar Googles valute converter
 def get_gbp_to_sek_rate():
-    """
-    Skrapar aktuell växelkurs från GBP till SEK.
-    Använder Google Finance som exempel.
-    """
     url = "https://www.google.com/finance/quote/GBP-SEK"
 
     headers = {
@@ -18,6 +14,7 @@ def get_gbp_to_sek_rate():
         soup = BeautifulSoup(response.text, 'html.parser')
 
         # Google Finance brukar ha klassen "YMlKec fxKbKc" för den stora valutasiffran
+        # Taget från Gemini
         rate_element = soup.find('div', class_='YMlKec fxKbKc')
 
         if rate_element:
