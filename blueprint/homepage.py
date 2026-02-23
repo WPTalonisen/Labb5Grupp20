@@ -22,7 +22,7 @@ def api_tutorial():
                 "url": "/categories/<kategori>/books",
                 "description": "Lägger till en ny bok i en specifik kategorifil.",
                 "example_body": {
-                    "title": "TITEL",
+                    "title": "DIN TITEL HÄR ",
                     "rating": "___ Stars",
                     "price": "DITT PRIS HÄR kr",
                     "link": "DIN LÄNK HÄR"
@@ -46,17 +46,16 @@ def api_tutorial():
             "GET find_book": {
                 "method": "GET",
                 "url": "/bookstoscrapeall/<titel>",
-                "description": "Söker efter böcker med user input i titeln i huvudfilen. Returnerar matchningar"
+                "description": "Söker efter böcker med user input i titeln i stora filen. Returnerar matchningar"
             },
             "POST add_book": {
                 "method": "POST",
                 "url": "/books/",
-                "description": "Lägg till en ny bok i huvudfilen. Skicka med en JSON-body enligt exemplet nedan.",
+                "description": "Lägg till en ny bok i stora filen. Skicka med en JSON-body enligt exemplet nedan.",
                 "example_body": {
                     "title": "TITEL",
                     "rating": "___ Stars",
                     "price": "DITT PRIS HÄR kr",
-                    "link": "DIN LÄNK HÄR"
                 }
             },
             "PUT update_book": {

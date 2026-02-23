@@ -7,12 +7,13 @@ def get_gbp_to_sek_rate():
     url = "https://api.frankfurter.app/latest?from=GBP&to=SEK"
 
     try:
-        # Timeout på 10 sekunder precis som innan
+
         response = requests.get(url)
+        # Kollar om response är mellan 200-299, om inte så ger den HTTPerror
         response.raise_for_status()
         data = response.json()
 
-        # Plockar ut just SEK-kursen från JSON-svaret
+        # Plockar ut just SEK från svaret
         rate = data['rates']['SEK']
 
         print(f"Hittade växelkurs via API: 1 GBP = {rate} SEK")

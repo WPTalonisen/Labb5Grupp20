@@ -182,31 +182,29 @@ def scrape_category_books(start_url, category_name):
 # Hittar specifik kategori och skrapar den för böcker
 @category_scraper_bp.route('/<string:category_name>', methods=['GET'])
 def find_specific_category(category_name):
-    """Söker efter en kategori, skrapar dess böcker och sparar i en JSON-fil"""
 
-    # 1. Hämta URL för kategorin med din befintliga funktion
     url = get_category_url(category_name)
 
     if not url:
         return jsonify({"error": f"Kategorin '{category_name}' hittades inte."}), 404
 
-    # 2. Skapa ett snyggt filnamn utan mellanslag och med dagens datum
+    # Skapar filnamn med vald kategori och dagens datum
     safe_category = category_name.lower().replace(" ", "_")
     today_date = datetime.now().strftime("%Y-%m-%d")
     filename = f"{safe_category}_{today_date}.json"
 
-    # 3. Cache-koll: Om vi redan har skrapat denna kategori idag, returnera filen direkt
+    # Kollar ifall filen redan finns
     if os.path.exists(filename):
         with open(filename, 'r', encoding='utf-8') as f:
             data = json.load(f)
             data["message"] = f"Hämtade {category_name} från dagens cache."
             return jsonify(data), 200
 
-    # 4. Om filen inte finns, kör skrapningen!
+    # Om filen inte finns
     print(f"Ingen cache för {category_name}. Skrapar från {url}...")
     scraped_books = scrape_category_books(url, category_name)
 
-    # 5. Strukturera datan som ska sparas och skickas tillbaka
+    # Strukturerar datan och sparar den
     data = {
         "message": f"Kategorin '{category_name}' nyskrapad!",
         "category": category_name,
@@ -216,7 +214,6 @@ def find_specific_category(category_name):
         "books": scraped_books
     }
 
-    # 6. Spara till den nya JSON-filen
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 

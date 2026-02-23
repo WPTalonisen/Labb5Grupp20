@@ -13,7 +13,7 @@ def get_specific_category_filename(category_name):
     return f"{category}_{today_date}.json"
 
 
-# LÄGG TILL en bok i en specifik kategori (POST)
+# Lägg till bok
 @category_crud_bp.route('/<string:category_name>/books', methods=['POST'])
 def add_category_book(category_name):
     filename = get_specific_category_filename(category_name)
@@ -26,15 +26,20 @@ def add_category_book(category_name):
     if not new_book:
         return jsonify({"error": "Ingen JSON-data skickades med"}), 400
 
-    # Läs den specifika filen
+    required_fields = ['title', 'rating', 'price']
+
+    # Kollar så att alla info som behövs finns
+    for field in required_fields:
+        if field not in new_book:
+            return jsonify({"error": f"Fältet '{field}' krävs. Besök \"127.0.0.1:5000\" för hjälp."}), 400
+
     with open(filename, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # Lägg till boken (kategorifilerna använder nyckeln "books" istället för "book_list")
+    # Lägg till boken
     data["books"].append(new_book)
     data["count"] = len(data["books"])
 
-    # Spara
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -69,7 +74,7 @@ def update_category_book(category_name, title):
     return jsonify({"error": f"Boken '{title}' hittades inte i denna kategori"}), 404
 
 
-# TA BORT en bok från en specifik kategori (DELETE)
+# Ta bort bok från lista
 @category_crud_bp.route('/<string:category_name>/books/<string:title>', methods=['DELETE'])
 def delete_category_book(category_name, title):
     filename = get_specific_category_filename(category_name)

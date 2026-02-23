@@ -8,6 +8,13 @@ from flask import Blueprint, jsonify
 from bs4 import BeautifulSoup
 from currency_convert import get_gbp_to_sek_rate
 
+
+# Scraper.py och Crud.py börjades av mig innan vi fick uppgiften till labb 5,
+# väl när vi fick den så trodde jag att jag redan hade gjort typ hela labben (skulle läst uppgiften nogrannare)
+# så jag satt mig och färdigställde allt. Sen när jag väl var klar så fick jag reda på att jag INTE hade gjort
+# det som behövdes, men den kod jag skrev är typ relevant till uppgiften så den får ligga kvar.
+# // William
+
 bookstoscrapeall_bp = Blueprint('bookstoscrapeall_bp', __name__)
 
 
@@ -98,15 +105,13 @@ def scrape_bookstoscrapeall():
                 if price_tag:
                     raw_price = price_tag.get_text(strip=True)  # T.ex £51.77
 
-                    # Rensa strängen: Ta bort allt som INTE är siffror eller punkt
+                    # Tar bort allt som INTE är siffror eller punkt
                     # Detta tar bort '£', 'Â' och andra tecken.
                     clean_price = re.sub(r'[^\d.]', '', raw_price)
 
                     try:
-                        # Gör om till float
                         price_float = float(clean_price)
-
-                        # Räkna ut SEK
+                        # Omvandla GBP till SEK
                         price_sek = round(price_float * gbp_rate, 2)
 
                     except ValueError:

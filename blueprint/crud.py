@@ -26,8 +26,6 @@ def write_json(data, filename):
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
-# ROUTES FÖR POST PUT OCH DELETE
-
 
 # Lägger till bok till JSON fil
 @book_crud_bp.route('/', methods=['POST'])
