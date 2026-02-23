@@ -1,0 +1,299 @@
+{
+    "message": "Kategorin 'fantasy' nyskrapad!",
+    "category": "fantasy",
+    "source_url": "https://books.toscrape.com/catalogue/category/books/fantasy_19/index.html",
+    "scraped_at": "2026-02-23 16:26:11.921133",
+    "count": 49,
+    "books": [
+        {
+            "title": "Saga, Volume 6 (Saga (Collected Editions) #6)",
+            "rating": "Three Stars",
+            "price": "306.39 kr",
+            "link": "https://books.toscrape.com/catalogue/saga-volume-6-saga-collected-editions-6_924/index.html"
+        },
+        {
+            "title": "Princess Between Worlds (Wide-Awake Princess #5)",
+            "rating": "Five Stars",
+            "price": "163.36 kr",
+            "link": "https://books.toscrape.com/catalogue/princess-between-worlds-wide-awake-princess-5_919/index.html"
+        },
+        {
+            "title": "Masks and Shadows",
+            "rating": "Two Stars",
+            "price": "690.66 kr",
+            "link": "https://books.toscrape.com/catalogue/masks-and-shadows_909/index.html"
+        },
+        {
+            "title": "Crown of Midnight (Throne of Glass #2)",
+            "rating": "Three Stars",
+            "price": "530.12 kr",
+            "link": "https://books.toscrape.com/catalogue/crown-of-midnight-throne-of-glass-2_888/index.html"
+        },
+        {
+            "title": "Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)",
+            "rating": "Two Stars",
+            "price": "343.98 kr",
+            "link": "https://books.toscrape.com/catalogue/avatar-the-last-airbender-smoke-and-shadow-part-3-smoke-and-shadow-3_881/index.html"
+        },
+        {
+            "title": "A Court of Thorns and Roses (A Court of Thorns and Roses #1)",
+            "rating": "One Stars",
+            "price": "641.31 kr",
+            "link": "https://books.toscrape.com/catalogue/a-court-of-thorns-and-roses-a-court-of-thorns-and-roses-1_874/index.html"
+        },
+        {
+            "title": "Throne of Glass (Throne of Glass #1)",
+            "rating": "Three Stars",
+            "price": "429.46 kr",
+            "link": "https://books.toscrape.com/catalogue/throne-of-glass-throne-of-glass-1_868/index.html"
+        },
+        {
+            "title": "The Glittering Court (The Glittering Court #1)",
+            "rating": "One Stars",
+            "price": "542.24 kr",
+            "link": "https://books.toscrape.com/catalogue/the-glittering-court-the-glittering-court-1_845/index.html"
+        },
+        {
+            "title": "Hollow City (Miss Peregrine’s Peculiar Children #2)",
+            "rating": "One Stars",
+            "price": "526.32 kr",
+            "link": "https://books.toscrape.com/catalogue/hollow-city-miss-peregrines-peculiar-children-2_813/index.html"
+        },
+        {
+            "title": "The Star-Touched Queen",
+            "rating": "Five Stars",
+            "price": "563.55 kr",
+            "link": "https://books.toscrape.com/catalogue/the-star-touched-queen_764/index.html"
+        },
+        {
+            "title": "The Hidden Oracle (The Trials of Apollo #1)",
+            "rating": "Two Stars",
+            "price": "639.97 kr",
+            "link": "https://books.toscrape.com/catalogue/the-hidden-oracle-the-trials-of-apollo-1_752/index.html"
+        },
+        {
+            "title": "The Bane Chronicles (The Bane Chronicles #1-11)",
+            "rating": "Four Stars",
+            "price": "547.75 kr",
+            "link": "https://books.toscrape.com/catalogue/the-bane-chronicles-the-bane-chronicles-1-11_746/index.html"
+        },
+        {
+            "title": "Island of Dragons (Unwanteds #7)",
+            "rating": "One Stars",
+            "price": "363.09 kr",
+            "link": "https://books.toscrape.com/catalogue/island-of-dragons-unwanteds-7_705/index.html"
+        },
+        {
+            "title": "Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)",
+            "rating": "Five Stars",
+            "price": "459.34 kr",
+            "link": "https://books.toscrape.com/catalogue/demigods-magicians-percy-and-annabeth-meet-the-kanes-percy-jackson-kane-chronicles-crossover-1-3_685/index.html"
+        },
+        {
+            "title": "City of Glass (The Mortal Instruments #3)",
+            "rating": "Four Stars",
+            "price": "686.01 kr",
+            "link": "https://books.toscrape.com/catalogue/city-of-glass-the-mortal-instruments-3_678/index.html"
+        },
+        {
+            "title": "Searching for Meaning in Gailana",
+            "rating": "One Stars",
+            "price": "474.28 kr",
+            "link": "https://books.toscrape.com/catalogue/searching-for-meaning-in-gailana_648/index.html"
+        },
+        {
+            "title": "The Star-Touched Queen",
+            "rating": "Five Stars",
+            "price": "395.54 kr",
+            "link": "https://books.toscrape.com/catalogue/the-star-touched-queen_642/index.html"
+        },
+        {
+            "title": "A Shard of Ice (The Black Symphony Saga #1)",
+            "rating": "Three Stars",
+            "price": "693.48 kr",
+            "link": "https://books.toscrape.com/catalogue/a-shard-of-ice-the-black-symphony-saga-1_558/index.html"
+        },
+        {
+            "title": "King's Folly (The Kinsman Chronicles #1)",
+            "rating": "Five Stars",
+            "price": "485.06 kr",
+            "link": "https://books.toscrape.com/catalogue/kings-folly-the-kinsman-chronicles-1_473/index.html"
+        },
+        {
+            "title": "Every Heart a Doorway (Every Heart A Doorway #1)",
+            "rating": "Five Stars",
+            "price": "148.91 kr",
+            "link": "https://books.toscrape.com/catalogue/every-heart-a-doorway-every-heart-a-doorway-1_465/index.html"
+        },
+        {
+            "title": "A Gathering of Shadows (Shades of Magic #2)",
+            "rating": "Four Stars",
+            "price": "548.73 kr",
+            "link": "https://books.toscrape.com/catalogue/a-gathering-of-shadows-shades-of-magic-2_456/index.html"
+        },
+        {
+            "title": "The Raven Boys (The Raven Cycle #1)",
+            "rating": "Four Stars",
+            "price": "707.07 kr",
+            "link": "https://books.toscrape.com/catalogue/the-raven-boys-the-raven-cycle-1_411/index.html"
+        },
+        {
+            "title": "The False Prince (The Ascendance Trilogy #1)",
+            "rating": "Five Stars",
+            "price": "685.76 kr",
+            "link": "https://books.toscrape.com/catalogue/the-false-prince-the-ascendance-trilogy-1_402/index.html"
+        },
+        {
+            "title": "Tell the Wind and Fire",
+            "rating": "Five Stars",
+            "price": "557.31 kr",
+            "link": "https://books.toscrape.com/catalogue/tell-the-wind-and-fire_396/index.html"
+        },
+        {
+            "title": "A Feast for Crows (A Song of Ice and Fire #4)",
+            "rating": "Four Stars",
+            "price": "210.75 kr",
+            "link": "https://books.toscrape.com/catalogue/a-feast-for-crows-a-song-of-ice-and-fire-4_357/index.html"
+        },
+        {
+            "title": "The Demonists (Demonist #1)",
+            "rating": "Two Stars",
+            "price": "638.13 kr",
+            "link": "https://books.toscrape.com/catalogue/the-demonists-demonist-1_345/index.html"
+        },
+        {
+            "title": "The Beast (Black Dagger Brotherhood #14)",
+            "rating": "Five Stars",
+            "price": "564.29 kr",
+            "link": "https://books.toscrape.com/catalogue/the-beast-black-dagger-brotherhood-14_342/index.html"
+        },
+        {
+            "title": "Paper and Fire (The Great Library #2)",
+            "rating": "Five Stars",
+            "price": "605.55 kr",
+            "link": "https://books.toscrape.com/catalogue/paper-and-fire-the-great-library-2_339/index.html"
+        },
+        {
+            "title": "Harry Potter and the Order of the Phoenix (Harry Potter #5)",
+            "rating": "Four Stars",
+            "price": "387.33 kr",
+            "link": "https://books.toscrape.com/catalogue/harry-potter-and-the-order-of-the-phoenix-harry-potter-5_327/index.html"
+        },
+        {
+            "title": "Harry Potter and the Half-Blood Prince (Harry Potter #6)",
+            "rating": "Five Stars",
+            "price": "596.98 kr",
+            "link": "https://books.toscrape.com/catalogue/harry-potter-and-the-half-blood-prince-harry-potter-6_326/index.html"
+        },
+        {
+            "title": "Harry Potter and the Chamber of Secrets (Harry Potter #2)",
+            "rating": "One Stars",
+            "price": "180.5 kr",
+            "link": "https://books.toscrape.com/catalogue/harry-potter-and-the-chamber-of-secrets-harry-potter-2_325/index.html"
+        },
+        {
+            "title": "The Rose & the Dagger (The Wrath and the Dawn #2)",
+            "rating": "Four Stars",
+            "price": "718.09 kr",
+            "link": "https://books.toscrape.com/catalogue/the-rose-the-dagger-the-wrath-and-the-dawn-2_278/index.html"
+        },
+        {
+            "title": "Soldier (Talon #3)",
+            "rating": "Two Stars",
+            "price": "302.72 kr",
+            "link": "https://books.toscrape.com/catalogue/soldier-talon-3_222/index.html"
+        },
+        {
+            "title": "Midnight Riot (Peter Grant/ Rivers of London - books #1)",
+            "rating": "Two Stars",
+            "price": "679.15 kr",
+            "link": "https://books.toscrape.com/catalogue/midnight-riot-peter-grant-rivers-of-london-books-1_194/index.html"
+        },
+        {
+            "title": "Heir to the Sky",
+            "rating": "Four Stars",
+            "price": "539.67 kr",
+            "link": "https://books.toscrape.com/catalogue/heir-to-the-sky_166/index.html"
+        },
+        {
+            "title": "Eragon (The Inheritance Cycle #1)",
+            "rating": "Three Stars",
+            "price": "537.22 kr",
+            "link": "https://books.toscrape.com/catalogue/eragon-the-inheritance-cycle-1_153/index.html"
+        },
+        {
+            "title": "Darkfever (Fever #1)",
+            "rating": "One Stars",
+            "price": "686.01 kr",
+            "link": "https://books.toscrape.com/catalogue/darkfever-fever-1_145/index.html"
+        },
+        {
+            "title": "Ash",
+            "rating": "Four Stars",
+            "price": "270.14 kr",
+            "link": "https://books.toscrape.com/catalogue/ash_123/index.html"
+        },
+        {
+            "title": "A Storm of Swords (A Song of Ice and Fire #3)",
+            "rating": "Two Stars",
+            "price": "382.31 kr",
+            "link": "https://books.toscrape.com/catalogue/a-storm-of-swords-a-song-of-ice-and-fire-3_116/index.html"
+        },
+        {
+            "title": "Vampire Girl (Vampire Girl #1)",
+            "rating": "Two Stars",
+            "price": "659.07 kr",
+            "link": "https://books.toscrape.com/catalogue/vampire-girl-vampire-girl-1_92/index.html"
+        },
+        {
+            "title": "The Silent Twin (Detective Jennifer Knight #3)",
+            "rating": "Three Stars",
+            "price": "443.91 kr",
+            "link": "https://books.toscrape.com/catalogue/the-silent-twin-detective-jennifer-knight-3_82/index.html"
+        },
+        {
+            "title": "The Mirror & the Maze (The Wrath and the Dawn #1.5)",
+            "rating": "One Stars",
+            "price": "359.78 kr",
+            "link": "https://books.toscrape.com/catalogue/the-mirror-the-maze-the-wrath-and-the-dawn-15_73/index.html"
+        },
+        {
+            "title": "Sister Sable (The Mad Queen #1)",
+            "rating": "Three Stars",
+            "price": "163.24 kr",
+            "link": "https://books.toscrape.com/catalogue/sister-sable-the-mad-queen-1_54/index.html"
+        },
+        {
+            "title": "Shadow Rites (Jane Yellowrock #10)",
+            "rating": "Four Stars",
+            "price": "265.98 kr",
+            "link": "https://books.toscrape.com/catalogue/shadow-rites-jane-yellowrock-10_51/index.html"
+        },
+        {
+            "title": "Origins (Alphas 0.5)",
+            "rating": "One Stars",
+            "price": "355.01 kr",
+            "link": "https://books.toscrape.com/catalogue/origins-alphas-05_42/index.html"
+        },
+        {
+            "title": "One Second (Seven #7)",
+            "rating": "Two Stars",
+            "price": "648.29 kr",
+            "link": "https://books.toscrape.com/catalogue/one-second-seven-7_41/index.html"
+        },
+        {
+            "title": "Myriad (Prentor #1)",
+            "rating": "Four Stars",
+            "price": "719.44 kr",
+            "link": "https://books.toscrape.com/catalogue/myriad-prentor-1_36/index.html"
+        },
+        {
+            "rating": "Five Stars"
+        },
+        {
+            "rating": "Five Stars",
+            "title": "Hejhej",
+            "price": "123978"
+        }
+    ]
+}
