@@ -56,7 +56,6 @@ def scrape_bookstoscrapeall():
     page_count = 1
 
     # HÄMTA VALUTAKURSEN INNAN LOOPEN
-    # Vi vill inte hämta kursen 50 gånger (en gång per sida), det tar för lång tid.
     gbp_rate = get_gbp_to_sek_rate()
     print(f"Använder växelkurs: 1 GBP = {gbp_rate} SEK")
 
@@ -121,7 +120,7 @@ def scrape_bookstoscrapeall():
                     "link": full_link
                 })
 
-            # --- Next Button Logic ---
+            # Letar efter "Next Page"
             next_li = soup.find('li', class_='next')
             if next_li:
                 next_link_tag = next_li.find('a')

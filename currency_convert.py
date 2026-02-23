@@ -2,7 +2,8 @@ import requests
 
 
 def get_gbp_to_sek_rate():
-    # Vi använder ett gratis API istället för att skrapa, mycket mer stabilt!
+    # Vi försökte använda google först men det krånglade bara så vi bytte till denna!
+    # Gemini gav oss länken
     url = "https://api.frankfurter.app/latest?from=GBP&to=SEK"
 
     try:
