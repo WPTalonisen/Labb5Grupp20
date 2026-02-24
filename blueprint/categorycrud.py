@@ -47,7 +47,7 @@ def add_category_book(category_name):
 
 
 # Uppdatera bok
-@category_crud_bp.route('/<string:category_name>/books/<string:title>', methods=['PUT'])
+@category_crud_bp.route('/<string:category_name>/<string:title>', methods=['PUT'])
 def update_category_book(category_name, title):
     filename = get_specific_category_filename(category_name)
 
@@ -103,3 +103,26 @@ def delete_category_book(category_name, title):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
     return jsonify({"message": f"Boken '{title}' togs bort från {category_name}"}), 200
+
+@category_crud_bp.route('/<string:category_name>/<string:title>', methods=['GET'])
+def find_category_book(category_name, title):
+    filename = get_specific_category_filename(category_name)
+    with open(filename, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    if not data:
+        return jsonify({'error': 'Dagens fil finns inte ännu. Gör en GET request för att skrapa och skapa en ny.'}), 404
+
+    matched_books =  []
+
+    for book in data["books"]:
+        if title.lower() in book.get("title", "").lower():
+            matched_books.append(book)
+
+    if matched_books:
+        return jsonify({
+            "message": f"Hittade {len(matched_books)} bok/böcker som matchar {title}",
+            "results": matched_books
+        }), 200
+    else:
+        return jsonify({"error": f"Hittade ingen bok som matchar {title}"}), 404

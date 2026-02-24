@@ -28,6 +28,11 @@ def api_tutorial():
                     "link": "DIN LÄNK HÄR"
                 }
             },
+            "GET find_category_book": {
+                "method": "GET",
+                "url": "/categories/<string:category_name>/<string:title>",
+                "description": "Söker efter bok i redan sparad kategori lista"
+            },
             "PUT update_category_book": {
                 "method": "PUT",
                 "url": "/categories/<kategori>/books/<titel>",
