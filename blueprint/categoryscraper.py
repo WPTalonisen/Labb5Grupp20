@@ -15,13 +15,11 @@ BASE_URL = "https://books.toscrape.com/"
 
 
 def get_category_filename():
-    """Skapar ett filnamn med dagens datum."""
     today_date = datetime.now().strftime("%Y-%m-%d")
     return f"categories_{today_date}.json"
 
 
 def scrape_and_save_categories():
-    """Hämtar alla kategorier och deras URL:er, och sparar till en JSON-fil med dagens datum."""
     print("Skrapar kategorier från BooksToScrape...")
 
     headers = {
@@ -64,7 +62,6 @@ def scrape_and_save_categories():
 
 
 def get_category_url(category_name):
-    """Använder dagens JSON-fil för att hämta URL:en för en specifik kategori."""
     filename = get_category_filename()
 
     # Skapa filen om den inte redan finns för idag
@@ -88,11 +85,8 @@ def get_category_url(category_name):
         return None
 
 
-# --- ROUTES FÖR API:ET ---
-
 @category_scraper_bp.route('/', methods=['GET'])
 def get_all_categories():
-    """Route för att se alla kategorier direkt i webbläsaren/Postman"""
     filename = get_category_filename()
 
     if not os.path.exists(filename):
@@ -108,7 +102,7 @@ def get_all_categories():
     }), 200
 
 def scrape_category_books(start_url, category_name):
-    """Skrapar alla böcker från en specifik kategori-URL och hanterar pagination."""
+    # Börjar på sida 1
     current_url = start_url
     all_books = []
     page_count = 1
@@ -117,7 +111,7 @@ def scrape_category_books(start_url, category_name):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
 
-    # Hämta valutakursen en gång
+    # Hämta kursen EN gång
     gbp_rate = get_gbp_to_sek_rate()
 
     while current_url:
@@ -164,7 +158,7 @@ def scrape_category_books(start_url, category_name):
                     "link": full_link
                 })
 
-            # Kolla om det finns en "Next"-knapp i kategorin
+            # Kolla om Next knapp finns
             next_li = soup.find('li', class_='next')
             if next_li:
                 next_href = next_li.find('a').get('href')

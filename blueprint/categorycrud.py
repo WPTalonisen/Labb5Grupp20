@@ -14,7 +14,7 @@ def get_specific_category_filename(category_name):
 
 
 # Lägg till bok
-@category_crud_bp.route('/<string:category_name>/books', methods=['POST'])
+@category_crud_bp.route('/<string:category_name>', methods=['POST'])
 def add_category_book(category_name):
     filename = get_specific_category_filename(category_name)
 
@@ -46,7 +46,7 @@ def add_category_book(category_name):
     return jsonify({"message": f"Boken lades till i {category_name}!", "book": new_book}), 201
 
 
-# UPPDATERA en bok i en specifik kategori (PUT)
+# Uppdatera bok
 @category_crud_bp.route('/<string:category_name>/books/<string:title>', methods=['PUT'])
 def update_category_book(category_name, title):
     filename = get_specific_category_filename(category_name)
@@ -75,7 +75,7 @@ def update_category_book(category_name, title):
 
 
 # Ta bort bok från lista
-@category_crud_bp.route('/<string:category_name>/books/<string:title>', methods=['DELETE'])
+@category_crud_bp.route('/<string:category_name>/<string:title>', methods=['DELETE'])
 def delete_category_book(category_name, title):
     filename = get_specific_category_filename(category_name)
 
