@@ -72,11 +72,6 @@ def api_tutorial():
                 "method": "DELETE",
                 "url": "/books/<titel>",
                 "description": "Tar bort en specifik bok från huvudfilen."
-            },
-            "DELETE delete_file": {
-                "method": "DELETE",
-                "url": "/books/file/<string:date>",
-                "description": "Tar bort en specifik fil."
             }
         }
     })

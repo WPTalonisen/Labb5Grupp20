@@ -89,16 +89,6 @@ def delete_book(title):
     return jsonify({"message": f"Boken '{title} togs bort från JSON filen"}), 200
 
 # Tar bort hel JSON fil
-@book_crud_bp.route('/file/<string:date>', methods=['DELETE'])
-def remove_file(date):
-    filename = f"bookstoscrapeall_cache{date}.json"
-
-    if os.path.exists(filename):
-        os.remove(filename)
-        return jsonify({"message": f"{filename} har tagits bort"}), 200
-    else:
-        return jsonify({"message": {f"{filename} hittades inte"}})
-
 
 # Hittar bok titel efter user input
 @book_crud_bp.route('/<string:title>', methods=['GET'])
